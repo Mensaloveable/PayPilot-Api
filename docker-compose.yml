@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  postgres_db:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=Lq5TCbgYbKX28376z9XWhWU5y
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=1234
+
+  pay-pilot-api:
+    container_name: pay-pilot
+    image: pay-pilot
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - postgres_db
