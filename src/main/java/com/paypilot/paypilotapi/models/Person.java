@@ -12,7 +12,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class Person {
+public class Person {
     private String firstname;
     private String lastname;
     private String middleName;
